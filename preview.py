@@ -23,7 +23,8 @@ class Ui_Dialog(object):
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
         self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 547, 483))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
-        self.gridLayout_2 = QtWidgets.QGridLayout(self.scrollAreaWidgetContents)
+        self.gridLayout_2 = QtWidgets.QGridLayout(
+            self.scrollAreaWidgetContents)
         self.gridLayout_2.setObjectName("gridLayout_2")
         self.label_img = QtWidgets.QLabel(self.scrollAreaWidgetContents)
         self.label_img.setText("")

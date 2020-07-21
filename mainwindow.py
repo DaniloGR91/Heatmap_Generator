@@ -22,8 +22,10 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName("gridLayout")
-        self.comboBox_correlation_type = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox_correlation_type.setObjectName("comboBox_correlation_type")
+        self.comboBox_correlation_type = QtWidgets.QComboBox(
+            self.centralwidget)
+        self.comboBox_correlation_type.setObjectName(
+            "comboBox_correlation_type")
         self.comboBox_correlation_type.addItem("")
         self.comboBox_correlation_type.addItem("")
         self.comboBox_correlation_type.addItem("")
@@ -43,8 +45,10 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setObjectName("label_2")
         self.gridLayout.addWidget(self.label_2, 4, 0, 1, 1)
-        self.checkBox_plotar_correalacao = QtWidgets.QCheckBox(self.centralwidget)
-        self.checkBox_plotar_correalacao.setObjectName("checkBox_plotar_correalacao")
+        self.checkBox_plotar_correalacao = QtWidgets.QCheckBox(
+            self.centralwidget)
+        self.checkBox_plotar_correalacao.setObjectName(
+            "checkBox_plotar_correalacao")
         self.gridLayout.addWidget(self.checkBox_plotar_correalacao, 6, 0, 1, 4)
         self.comboBox_tamanho = QtWidgets.QComboBox(self.centralwidget)
         self.comboBox_tamanho.setObjectName("comboBox_tamanho")
@@ -80,14 +84,16 @@ class Ui_MainWindow(object):
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
         self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 365, 146))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
-        self.gridLayout_2 = QtWidgets.QGridLayout(self.scrollAreaWidgetContents)
+        self.gridLayout_2 = QtWidgets.QGridLayout(
+            self.scrollAreaWidgetContents)
         self.gridLayout_2.setObjectName("gridLayout_2")
         self.label_status = QtWidgets.QLabel(self.scrollAreaWidgetContents)
         font = QtGui.QFont()
         font.setPointSize(11)
         self.label_status.setFont(font)
         self.label_status.setStyleSheet("background: white")
-        self.label_status.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.label_status.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.label_status.setObjectName("label_status")
         self.gridLayout_2.addWidget(self.label_status, 0, 0, 1, 1)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
@@ -99,18 +105,26 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Heatmap Generator"))
-        self.comboBox_correlation_type.setItemText(0, _translate("MainWindow", "Pearson"))
-        self.comboBox_correlation_type.setItemText(1, _translate("MainWindow", "Spearman"))
-        self.comboBox_correlation_type.setItemText(2, _translate("MainWindow", "Kendall"))
+        MainWindow.setWindowTitle(_translate(
+            "MainWindow", "Heatmap Generator"))
+        self.comboBox_correlation_type.setItemText(
+            0, _translate("MainWindow", "Pearson"))
+        self.comboBox_correlation_type.setItemText(
+            1, _translate("MainWindow", "Spearman"))
+        self.comboBox_correlation_type.setItemText(
+            2, _translate("MainWindow", "Kendall"))
         self.label.setText(_translate("MainWindow", "Tamanho"))
-        self.checkBox_ID_firstcolumn.setText(_translate("MainWindow", "Primeira coluna é ID"))
+        self.checkBox_ID_firstcolumn.setText(
+            _translate("MainWindow", "Primeira coluna é ID"))
         self.label_4.setText(_translate("MainWindow", "Tipo de correlação"))
         self.label_2.setText(_translate("MainWindow", "Título"))
-        self.checkBox_plotar_correalacao.setText(_translate("MainWindow", "Plotar o valor da correlação"))
-        self.comboBox_tamanho.setItemText(0, _translate("MainWindow", "Pequeno"))
+        self.checkBox_plotar_correalacao.setText(
+            _translate("MainWindow", "Plotar o valor da correlação"))
+        self.comboBox_tamanho.setItemText(
+            0, _translate("MainWindow", "Pequeno"))
         self.comboBox_tamanho.setItemText(1, _translate("MainWindow", "Médio"))
-        self.comboBox_tamanho.setItemText(2, _translate("MainWindow", "Grande"))
+        self.comboBox_tamanho.setItemText(
+            2, _translate("MainWindow", "Grande"))
         self.btn_instructions.setText(_translate("MainWindow", "Instruções"))
         self.btn_open.setText(_translate("MainWindow", "Abrir planilha"))
         self.label_3.setText(_translate("MainWindow", "Cores"))
