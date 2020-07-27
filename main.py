@@ -2,6 +2,7 @@ from mainwindow import Ui_MainWindow
 from preview import Ui_Dialog
 from PyQt5.QtWidgets import QDialog, QMainWindow, QApplication, QFileDialog
 from PyQt5.QtGui import QPixmap
+from PyQt5.QtCore import Qt
 import os
 import generator
 import sys
@@ -32,7 +33,7 @@ class Heatmap_generator(QMainWindow, Ui_MainWindow):
         if self.dataset_opened:
             savefilename, _ = QFileDialog.getSaveFileName(self,
                                                           'Save Heatmap',
-                                                          r'C:/Users/danil/Documents',
+                                                          self.filename,
                                                           'Image files (*.jpg)')
 
             self.set_config()
@@ -69,12 +70,17 @@ class Heatmap_generator(QMainWindow, Ui_MainWindow):
     def open_dataset(self):
         filename, _ = QFileDialog.getOpenFileName(self,
                                                   'Open Dataset',
-                                                  r'C:/Users/danil/Documents',
-                                                  'Excel files (*.xml *.xls)')
-        self.label_status.setText('Arquivo selecionado')
-        self.filename = filename
-        self.dataset_opened = True
-        self.label_status.setText(f'Arquivo selecionado: \n{self.filename}')
+                                                  os.path.expanduser(
+                                                      '~/Documents'),
+                                                  'Excel files (*.xls *.xlsx)')
+        if filename != '':
+            self.label_status.setText('Arquivo selecionado')
+            self.filename = filename
+            self.dataset_opened = True
+            self.label_status.setText(
+                f'Arquivo selecionado: \n{self.filename}')
+        else:
+            self.label_status.setText('Nenhum arquivo selecionado')
 
 
 class Preview(Ui_Dialog, QDialog):
@@ -92,7 +98,7 @@ class Preview(Ui_Dialog, QDialog):
                           corr_method=self.config['correlation_type'],
                           plot_corr=self.config['plotar_corr'])
 
-        imagem = QPixmap('temp.jpg')
+        imagem = QPixmap('temp.jpg').scaled(1024, 768, Qt.KeepAspectRatio)
         self.label_img.setPixmap(imagem)
 
     def closeEvent(self, event):
@@ -100,7 +106,6 @@ class Preview(Ui_Dialog, QDialog):
 
 
 if __name__ == "__main__":
-    print('oi')
     qt = QApplication(sys.argv)
     heatmap_generator = Heatmap_generator()
     heatmap_generator.show()
