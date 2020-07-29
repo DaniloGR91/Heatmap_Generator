@@ -43,9 +43,10 @@ class Heatmap_generator(QMainWindow, Ui_MainWindow):
                               tamanho=self.config['tamanho'],
                               color=self.config['color'],
                               corr_method=self.config['correlation_type'],
+                              index_col=self.config['first_column_id'],
                               plot_corr=self.config['plotar_corr'])
 
-            self.label_status.setText(savefilename)
+            self.label_status.setText(f'Heatmap salvo em \n{savefilename}')
 
         else:
             self.label_status.setText('Você deve abrir um data set.')
@@ -96,6 +97,7 @@ class Preview(Ui_Dialog, QDialog):
                           tamanho=self.config['tamanho'],
                           color=self.config['color'],
                           corr_method=self.config['correlation_type'],
+                          index_col=self.config['first_column_id'],
                           plot_corr=self.config['plotar_corr'])
 
         imagem = QPixmap('temp.jpg').scaled(1024, 768, Qt.KeepAspectRatio)

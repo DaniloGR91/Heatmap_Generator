@@ -9,9 +9,12 @@ def heatmap(dataset,
             tamanho='Médio',
             color='Vermelho',
             corr_method='Pearson',
+            index_col=False,
             plot_corr=False, *args, **kwargs):
 
-    df = pd.read_excel(dataset)
+    index_col = 0 if index_col is True else None
+
+    df = pd.read_excel(dataset, index_col=index_col)
     fig_size = set_size(tamanho)[0]
     title_size = set_size(tamanho)[1]
     label_size = set_size(tamanho)[2]
